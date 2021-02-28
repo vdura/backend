@@ -5,6 +5,7 @@ import users from "./data/users.js";
 import artist from "./data/artsit.js";
 import User from "./models/userModel.js";
 import Artist from "./models/artistModel.js";
+import { nanoid } from "nanoid";
 
 //load .env config in process
 dotenv.config();

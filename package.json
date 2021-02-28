@@ -5,7 +5,7 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "server" : "node server",
+    "server": "node server",
     "dev-server": "nodemon server.js",
     "data:import": "node seeder",
     "data:destroy": "node seeder -d"
@@ -28,6 +28,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.11.13",
     "morgan": "^1.10.0",
+    "nanoid": "^3.1.20",
     "validator": "^13.5.2"
   }
 }

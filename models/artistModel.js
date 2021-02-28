@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { nanoid } from "nanoid";
 
 const artistSchema = mongoose.Schema(
   {
@@ -44,6 +45,10 @@ const artistSchema = mongoose.Schema(
         required: true,
       },
     ],
+    sid: {
+      type: String,
+      default: () => nanoid(5),
+    },
   },
   { timestamps: true }
 );

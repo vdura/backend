@@ -21,7 +21,7 @@ app.use(cors());
 
 //Middleware : logger
 if (process.env.NODE_ENV === "development") {
-  app.use(morgan("dev"));
+  app.use(morgan("combined"));
 } else if (process.env.NODE_ENV === "production") {
   console.log = () => {}; // disable console log in production
 }

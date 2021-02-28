@@ -25,17 +25,28 @@ const getArtistList = asyncHandler(async (req, res) => {
     : Number.POSITIVE_INFINITY;
   const reqCanTravel = filters.TRAVEL ? filters.TRAVEL : ["y", "n"];
 
-  const result = await Artist.find({
+  const query = {
     category: { $in: reqCategory },
     rating: { $gte: reqRating },
     startPrice: { $gte: reqPriceMin, $lte: reqPriceMax },
     canTravel: { $in: reqCanTravel },
-  });
+  };
+
+  const result = await Artist.find(query).select("-createdAt -updatedAt -__v");
+
+  const totalProfile = await Artist.countDocuments(query);
+
+  const response_data = {
+    totalProfile,
+    page,
+    filters,
+    data: result,
+  };
 
   console.log(result);
   console.log("sort-by", sortBy);
   // console.log();
-  res.json(result);
+  res.json(response_data);
 });
 
 const getArtistProfile = asyncHandler(async (req, res) => {});
