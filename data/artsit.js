@@ -1,8 +1,42 @@
 const artist = [
   {
     name: "test user",
-    rating: 4.5, //filter
-    numReview: 56,
+    rating: {
+      average: 4.5, //filter
+      totalCount: 70,
+      individualCount: {
+        1: 0,
+        2: 0,
+        3: 10,
+        4: 20,
+        5: 40,
+      },
+    },
+
+    review: {
+      totalCount: 2,
+      data: [
+        {
+          name: "customer 1",
+          rating: 4,
+          desc:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ea unde, officia dignissimos hic praesentium, blanditiis totam sequi dolorum minus labore facilis laborum optio doloremque corporis nesciunt! Facere, natus eius!",
+        },
+        {
+          name: "customer 2",
+          rating: 3,
+          desc:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ea unde, officia dignissimos hic praesentium, blanditiis totam sequi dolorum minus labore facilis laborum optio doloremque corporis nesciunt! Facere, natus eius!",
+        },
+        {
+          name: "customer 3",
+          rating: 5,
+          desc:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ea unde, officia dignissimos hic praesentium, blanditiis totam sequi dolorum minus labore facilis laborum optio doloremque corporis nesciunt! Facere, natus eius!",
+        },
+      ],
+    },
+    // numReview: 56,
     startPrice: 20000, //filter
     location: "New Delhi",
     canTravel: "y", //filter
@@ -10,6 +44,8 @@ const artist = [
     exp: 2,
     about:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ea unde, officia dignissimos hic praesentium, blanditiis totam sequi dolorum minus labore facilis laborum optio doloremque corporis nesciunt! Facere, natus eius!",
+    services: ["consectetur", "adipisicing", "Lorem", "ipsum", "officia"],
+    qualification: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     packages: [
       {
         name: "HD makeup",
@@ -20,12 +56,46 @@ const artist = [
         price: 25000,
       },
     ],
+
     // slug: "test",
   },
   {
     name: "test user 2",
-    rating: 3.5, //filter
-    numReview: 20,
+    rating: {
+      average: 3.5, //filter
+      totalCount: 30,
+      individualCount: {
+        1: 0,
+        2: 5,
+        3: 5,
+        4: 10,
+        5: 10,
+      },
+    },
+    review: {
+      totalCount: 2,
+      data: [
+        {
+          name: "customer 1",
+          rating: 4,
+          desc:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ea unde, officia dignissimos hic praesentium, blanditiis totam sequi dolorum minus labore facilis laborum optio doloremque corporis nesciunt! Facere, natus eius!",
+        },
+        {
+          name: "customer 2",
+          rating: 3,
+          desc:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ea unde, officia dignissimos hic praesentium, blanditiis totam sequi dolorum minus labore facilis laborum optio doloremque corporis nesciunt! Facere, natus eius!",
+        },
+        {
+          name: "customer 3",
+          rating: 5,
+          desc:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ea unde, officia dignissimos hic praesentium, blanditiis totam sequi dolorum minus labore facilis laborum optio doloremque corporis nesciunt! Facere, natus eius!",
+        },
+      ],
+    },
+    // numReview: 20,
     startPrice: 25000, //filter
     location: "New Delhi",
     canTravel: "n", //filter
@@ -33,6 +103,8 @@ const artist = [
     exp: 4,
     about:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ea unde, officia dignissimos hic praesentium, blanditiis totam sequi dolorum minus labore facilis laborum optio doloremque corporis nesciunt! Facere, natus eius!",
+    services: ["consectetur", "adipisicing", "Lorem", "ipsum", "officia"],
+    qualification: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     packages: [
       {
         name: "HD makeup",
@@ -43,8 +115,41 @@ const artist = [
 
   {
     name: "test user 3",
-    rating: 3.2, //filter
-    numReview: 2,
+    rating: {
+      average: 3.2, //filter
+      totalCount: 5,
+      individualCount: {
+        1: 0,
+        2: 0,
+        3: 0,
+        4: 0,
+        5: 5,
+      },
+    },
+    review: {
+      totalCount: 2,
+      data: [
+        {
+          name: "customer 1",
+          rating: 4,
+          desc:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ea unde, officia dignissimos hic praesentium, blanditiis totam sequi dolorum minus labore facilis laborum optio doloremque corporis nesciunt! Facere, natus eius!",
+        },
+        {
+          name: "customer 2",
+          rating: 3,
+          desc:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ea unde, officia dignissimos hic praesentium, blanditiis totam sequi dolorum minus labore facilis laborum optio doloremque corporis nesciunt! Facere, natus eius!",
+        },
+        {
+          name: "customer 3",
+          rating: 5,
+          desc:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ea unde, officia dignissimos hic praesentium, blanditiis totam sequi dolorum minus labore facilis laborum optio doloremque corporis nesciunt! Facere, natus eius!",
+        },
+      ],
+    },
+    // numReview: 2,
     startPrice: 5000, //filter
     location: "New Delhi",
     canTravel: "y", //filter
@@ -52,6 +157,7 @@ const artist = [
     exp: 1,
     about:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ea unde, officia dignissimos hic praesentium, blanditiis totam sequi dolorum minus labore facilis laborum optio doloremque corporis nesciunt! Facere, natus eius!",
+    services: ["consectetur", "adipisicing", "Lorem", "ipsum", "officia"],
     packages: [
       {
         name: "HD makeup",
@@ -66,8 +172,41 @@ const artist = [
 
   {
     name: "test user 4",
-    rating: 4.7, //filter
-    numReview: 6,
+    rating: {
+      average: 4.7, //filter
+      totalCount: 6,
+      individualCount: {
+        1: 0,
+        2: 0,
+        3: 0,
+        4: 1,
+        5: 15,
+      },
+    },
+    review: {
+      totalCount: 2,
+      data: [
+        {
+          name: "customer 1",
+          rating: 4,
+          desc:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ea unde, officia dignissimos hic praesentium, blanditiis totam sequi dolorum minus labore facilis laborum optio doloremque corporis nesciunt! Facere, natus eius!",
+        },
+        {
+          name: "customer 2",
+          rating: 3,
+          desc:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ea unde, officia dignissimos hic praesentium, blanditiis totam sequi dolorum minus labore facilis laborum optio doloremque corporis nesciunt! Facere, natus eius!",
+        },
+        {
+          name: "customer 3",
+          rating: 5,
+          desc:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ea unde, officia dignissimos hic praesentium, blanditiis totam sequi dolorum minus labore facilis laborum optio doloremque corporis nesciunt! Facere, natus eius!",
+        },
+      ],
+    },
+    // numReview: 6,
     startPrice: 15000, //filter
     location: "New Delhi",
     canTravel: "y", //filter
@@ -75,6 +214,7 @@ const artist = [
     exp: 0, //filter
     about:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ea unde, officia dignissimos hic praesentium, blanditiis totam sequi dolorum minus labore facilis laborum optio doloremque corporis nesciunt! Facere, natus eius!",
+    services: ["consectetur", "adipisicing", "Lorem", "ipsum", "officia"],
     packages: [
       {
         name: "HD makeup",
@@ -89,8 +229,41 @@ const artist = [
 
   {
     name: "test user 5",
-    rating: 4.9, //filter
-    numReview: 8,
+    rating: {
+      average: 4.8, //filter
+      totalCount: 10,
+      individualCount: {
+        1: 0,
+        2: 0,
+        3: 3,
+        4: 2,
+        5: 5,
+      },
+    },
+    review: {
+      totalCount: 2,
+      data: [
+        {
+          name: "customer 1",
+          rating: 4,
+          desc:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ea unde, officia dignissimos hic praesentium, blanditiis totam sequi dolorum minus labore facilis laborum optio doloremque corporis nesciunt! Facere, natus eius!",
+        },
+        {
+          name: "customer 2",
+          rating: 3,
+          desc:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ea unde, officia dignissimos hic praesentium, blanditiis totam sequi dolorum minus labore facilis laborum optio doloremque corporis nesciunt! Facere, natus eius!",
+        },
+        {
+          name: "customer 3",
+          rating: 5,
+          desc:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ea unde, officia dignissimos hic praesentium, blanditiis totam sequi dolorum minus labore facilis laborum optio doloremque corporis nesciunt! Facere, natus eius!",
+        },
+      ],
+    },
+    // numReview: 8,
     startPrice: 25000, //filter
     location: "New Delhi",
     canTravel: "y", //filter
@@ -98,6 +271,7 @@ const artist = [
     exp: 3, //filter
     about:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ea unde, officia dignissimos hic praesentium, blanditiis totam sequi dolorum minus labore facilis laborum optio doloremque corporis nesciunt! Facere, natus eius!",
+    services: ["consectetur", "adipisicing", "Lorem", "ipsum", "officia"],
     packages: [
       {
         name: "HD makeup",
@@ -112,8 +286,41 @@ const artist = [
 
   {
     name: "test user 6",
-    rating: 3.4, //filter
-    numReview: 10,
+    rating: {
+      average: 3.4, //filter
+      totalCount: 15,
+      individualCount: {
+        1: 1,
+        2: 2,
+        3: 2,
+        4: 8,
+        5: 2,
+      },
+    },
+    review: {
+      totalCount: 2,
+      data: [
+        {
+          name: "customer 1",
+          rating: 4,
+          desc:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ea unde, officia dignissimos hic praesentium, blanditiis totam sequi dolorum minus labore facilis laborum optio doloremque corporis nesciunt! Facere, natus eius!",
+        },
+        {
+          name: "customer 2",
+          rating: 3,
+          desc:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ea unde, officia dignissimos hic praesentium, blanditiis totam sequi dolorum minus labore facilis laborum optio doloremque corporis nesciunt! Facere, natus eius!",
+        },
+        {
+          name: "customer 3",
+          rating: 5,
+          desc:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ea unde, officia dignissimos hic praesentium, blanditiis totam sequi dolorum minus labore facilis laborum optio doloremque corporis nesciunt! Facere, natus eius!",
+        },
+      ],
+    },
+    // numReview: 10,
     startPrice: 2000, //filter
     location: "New Delhi",
     canTravel: "n", //filter
@@ -121,6 +328,7 @@ const artist = [
     exp: 8, //filter
     about:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ea unde, officia dignissimos hic praesentium, blanditiis totam sequi dolorum minus labore facilis laborum optio doloremque corporis nesciunt! Facere, natus eius!",
+    services: ["consectetur", "adipisicing", "Lorem", "ipsum", "officia"],
     packages: [
       {
         name: "HD makeup",
@@ -135,8 +343,41 @@ const artist = [
 
   {
     name: "test user 7",
-    rating: 4.4, //filter
-    numReview: 15,
+    rating: {
+      average: 3.2, //filter
+      totalCount: 25,
+      individualCount: {
+        1: 5,
+        2: 5,
+        3: 5,
+        4: 5,
+        5: 5,
+      },
+    },
+    review: {
+      totalCount: 2,
+      data: [
+        {
+          name: "customer 1",
+          rating: 4,
+          desc:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ea unde, officia dignissimos hic praesentium, blanditiis totam sequi dolorum minus labore facilis laborum optio doloremque corporis nesciunt! Facere, natus eius!",
+        },
+        {
+          name: "customer 2",
+          rating: 3,
+          desc:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ea unde, officia dignissimos hic praesentium, blanditiis totam sequi dolorum minus labore facilis laborum optio doloremque corporis nesciunt! Facere, natus eius!",
+        },
+        {
+          name: "customer 3",
+          rating: 5,
+          desc:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ea unde, officia dignissimos hic praesentium, blanditiis totam sequi dolorum minus labore facilis laborum optio doloremque corporis nesciunt! Facere, natus eius!",
+        },
+      ],
+    },
+    // numReview: 15,
     startPrice: 7000, //filter
     location: "New Delhi",
     canTravel: "y", //filter
@@ -144,6 +385,8 @@ const artist = [
     exp: 10, //filter
     about:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ea unde, officia dignissimos hic praesentium, blanditiis totam sequi dolorum minus labore facilis laborum optio doloremque corporis nesciunt! Facere, natus eius!",
+    services: ["consectetur", "adipisicing", "Lorem", "ipsum", "officia"],
+    qualification: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     packages: [
       {
         name: "HD makeup",
@@ -157,8 +400,41 @@ const artist = [
   },
   {
     name: "test user 8",
-    rating: 4.7, //filter
-    numReview: 65,
+    rating: {
+      average: 4.2, //filter
+      totalCount: 75,
+      individualCount: {
+        1: 3,
+        2: 2,
+        3: 30,
+        4: 15,
+        5: 25,
+      },
+    },
+    review: {
+      totalCount: 2,
+      data: [
+        {
+          name: "customer 1",
+          rating: 4,
+          desc:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ea unde, officia dignissimos hic praesentium, blanditiis totam sequi dolorum minus labore facilis laborum optio doloremque corporis nesciunt! Facere, natus eius!",
+        },
+        {
+          name: "customer 2",
+          rating: 3,
+          desc:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ea unde, officia dignissimos hic praesentium, blanditiis totam sequi dolorum minus labore facilis laborum optio doloremque corporis nesciunt! Facere, natus eius!",
+        },
+        {
+          name: "customer 3",
+          rating: 5,
+          desc:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ea unde, officia dignissimos hic praesentium, blanditiis totam sequi dolorum minus labore facilis laborum optio doloremque corporis nesciunt! Facere, natus eius!",
+        },
+      ],
+    },
+    // numReview: 65,
     startPrice: 6000, //filter
     location: "New Delhi",
     canTravel: "y", //filter
@@ -166,6 +442,8 @@ const artist = [
     exp: 15, //filter
     about:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ea unde, officia dignissimos hic praesentium, blanditiis totam sequi dolorum minus labore facilis laborum optio doloremque corporis nesciunt! Facere, natus eius!",
+    services: ["consectetur", "adipisicing", "Lorem", "ipsum", "officia"],
+    qualification: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     packages: [
       {
         name: "HD makeup",
@@ -179,8 +457,41 @@ const artist = [
   },
   {
     name: "test user 9",
-    rating: 4.8, //filter
-    numReview: 45,
+    rating: {
+      average: 4.6, //filter
+      totalCount: 35,
+      individualCount: {
+        1: 1,
+        2: 4,
+        3: 5,
+        4: 15,
+        5: 10,
+      },
+    },
+    review: {
+      totalCount: 2,
+      data: [
+        {
+          name: "customer 1",
+          rating: 4,
+          desc:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ea unde, officia dignissimos hic praesentium, blanditiis totam sequi dolorum minus labore facilis laborum optio doloremque corporis nesciunt! Facere, natus eius!",
+        },
+        {
+          name: "customer 2",
+          rating: 3,
+          desc:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ea unde, officia dignissimos hic praesentium, blanditiis totam sequi dolorum minus labore facilis laborum optio doloremque corporis nesciunt! Facere, natus eius!",
+        },
+        {
+          name: "customer 3",
+          rating: 5,
+          desc:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ea unde, officia dignissimos hic praesentium, blanditiis totam sequi dolorum minus labore facilis laborum optio doloremque corporis nesciunt! Facere, natus eius!",
+        },
+      ],
+    },
+    // numReview: 45,
     startPrice: 6000, //filter
     location: "New Delhi",
     canTravel: "y", //filter
@@ -188,6 +499,7 @@ const artist = [
     exp: 5, //filter
     about:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ea unde, officia dignissimos hic praesentium, blanditiis totam sequi dolorum minus labore facilis laborum optio doloremque corporis nesciunt! Facere, natus eius!",
+    services: ["consectetur", "adipisicing", "Lorem", "ipsum", "officia"],
     packages: [
       {
         name: "HD makeup",
@@ -201,8 +513,41 @@ const artist = [
   },
   {
     name: "test user 10",
-    rating: 3.7, //filter
-    numReview: 15,
+    rating: {
+      average: 3.7, //filter
+      totalCount: 15,
+      individualCount: {
+        1: 3,
+        2: 3,
+        3: 3,
+        4: 3,
+        5: 3,
+      },
+    },
+    review: {
+      totalCount: 2,
+      data: [
+        {
+          name: "customer 1",
+          rating: 4,
+          desc:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ea unde, officia dignissimos hic praesentium, blanditiis totam sequi dolorum minus labore facilis laborum optio doloremque corporis nesciunt! Facere, natus eius!",
+        },
+        {
+          name: "customer 2",
+          rating: 3,
+          desc:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ea unde, officia dignissimos hic praesentium, blanditiis totam sequi dolorum minus labore facilis laborum optio doloremque corporis nesciunt! Facere, natus eius!",
+        },
+        {
+          name: "customer 3",
+          rating: 5,
+          desc:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ea unde, officia dignissimos hic praesentium, blanditiis totam sequi dolorum minus labore facilis laborum optio doloremque corporis nesciunt! Facere, natus eius!",
+        },
+      ],
+    },
+    // numReview: 15,
     startPrice: 16000, //filter
     location: "New Delhi",
     canTravel: "y", //filter
@@ -210,6 +555,8 @@ const artist = [
     exp: 3, //filter
     about:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ea unde, officia dignissimos hic praesentium, blanditiis totam sequi dolorum minus labore facilis laborum optio doloremque corporis nesciunt! Facere, natus eius!",
+    services: ["consectetur", "adipisicing", "Lorem", "ipsum", "officia"],
+    qualification: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     packages: [
       {
         name: "HD makeup",
@@ -223,8 +570,41 @@ const artist = [
   },
   {
     name: "test user 11",
-    rating: 5.0, //filter
-    numReview: 65,
+    rating: {
+      average: 5.0, //filter
+      totalCount: 75,
+      individualCount: {
+        1: 3,
+        2: 2,
+        3: 30,
+        4: 15,
+        5: 25,
+      },
+    },
+    review: {
+      totalCount: 2,
+      data: [
+        {
+          name: "customer 1",
+          rating: 4,
+          desc:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ea unde, officia dignissimos hic praesentium, blanditiis totam sequi dolorum minus labore facilis laborum optio doloremque corporis nesciunt! Facere, natus eius!",
+        },
+        {
+          name: "customer 2",
+          rating: 3,
+          desc:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ea unde, officia dignissimos hic praesentium, blanditiis totam sequi dolorum minus labore facilis laborum optio doloremque corporis nesciunt! Facere, natus eius!",
+        },
+        {
+          name: "customer 3",
+          rating: 5,
+          desc:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ea unde, officia dignissimos hic praesentium, blanditiis totam sequi dolorum minus labore facilis laborum optio doloremque corporis nesciunt! Facere, natus eius!",
+        },
+      ],
+    },
+    // numReview: 65,
     startPrice: 6000, //filter
     location: "New Delhi",
     canTravel: "y", //filter
@@ -232,6 +612,7 @@ const artist = [
     exp: 7, //filter
     about:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ea unde, officia dignissimos hic praesentium, blanditiis totam sequi dolorum minus labore facilis laborum optio doloremque corporis nesciunt! Facere, natus eius!",
+    services: ["consectetur", "adipisicing", "Lorem", "ipsum", "officia"],
     packages: [
       {
         name: "HD makeup",
@@ -245,8 +626,39 @@ const artist = [
   },
   {
     name: "test user 12",
-    rating: 4.1, //filter
-    numReview: 25,
+    rating: {
+      average: 4.1, //filter
+      totalCount: 45,
+      1: 0,
+      2: 0,
+      3: 5,
+      4: 15,
+      5: 25,
+    },
+    review: {
+      totalCount: 2,
+      data: [
+        {
+          name: "customer 1",
+          rating: 4,
+          desc:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ea unde, officia dignissimos hic praesentium, blanditiis totam sequi dolorum minus labore facilis laborum optio doloremque corporis nesciunt! Facere, natus eius!",
+        },
+        {
+          name: "customer 2",
+          rating: 3,
+          desc:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ea unde, officia dignissimos hic praesentium, blanditiis totam sequi dolorum minus labore facilis laborum optio doloremque corporis nesciunt! Facere, natus eius!",
+        },
+        {
+          name: "customer 3",
+          rating: 5,
+          desc:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ea unde, officia dignissimos hic praesentium, blanditiis totam sequi dolorum minus labore facilis laborum optio doloremque corporis nesciunt! Facere, natus eius!",
+        },
+      ],
+    },
+    // numReview: 25,
     startPrice: 13000, //filter
     location: "New Delhi",
     canTravel: "y", //filter
@@ -254,6 +666,7 @@ const artist = [
     exp: 9, //filter
     about:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ea unde, officia dignissimos hic praesentium, blanditiis totam sequi dolorum minus labore facilis laborum optio doloremque corporis nesciunt! Facere, natus eius!",
+    services: ["consectetur", "adipisicing", "Lorem", "ipsum", "officia"],
     packages: [
       {
         name: "HD makeup",

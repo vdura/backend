@@ -20,6 +20,21 @@ const packageSchema = mongoose.Schema({
   //TODO: per head packages
 });
 
+const reviewSchema = mongoose.Schema(
+  {
+    name: { type: String, required: true },
+    rating: { type: Number, required: true },
+    desc: { type: String, required: true },
+    date: {
+      type: Date,
+      default: () => new Date(),
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
+
 const artistSchema = mongoose.Schema(
   {
     name: {
@@ -27,17 +42,70 @@ const artistSchema = mongoose.Schema(
       required: true,
     },
     rating: {
-      type: Number,
-      required: true,
-      default: 0,
-      min: 0,
-      max: 5,
+      average: {
+        type: Number,
+        required: true,
+        default: 0,
+        min: 0,
+        max: 5,
+      },
+      totalCount: {
+        type: Number,
+        required: true,
+        default: 0,
+      },
+      individualCount: {
+        //TODO: check for totalCount == sum of individualCount
+        1: {
+          type: Number,
+          required: true,
+          default: 0,
+        },
+        2: {
+          type: Number,
+          required: true,
+          default: 0,
+        },
+        3: {
+          type: Number,
+          required: true,
+          default: 0,
+        },
+        4: {
+          type: Number,
+          required: true,
+          default: 0,
+        },
+        5: {
+          type: Number,
+          required: true,
+          default: 0,
+        },
+      },
     },
-    numReview: {
-      type: Number,
-      required: true,
-      default: 0,
+    review: {
+      totalCount: {
+        type: Number,
+        required: true,
+        default: 0,
+      },
+      data: [reviewSchema],
     },
+    qualification: {
+      type: String,
+    },
+    services: [
+      {
+        type: String,
+        required: true,
+      },
+    ],
+
+    // numReview: {
+    //   type: Number,
+    //   required: true,
+    //   default: 0,
+    // },
     startPrice: {
       type: Number,
       required: true,
@@ -70,6 +138,7 @@ const artistSchema = mongoose.Schema(
     ],
     about: {
       type: String,
+      required: true,
     },
     packages: [packageSchema],
     sid: {

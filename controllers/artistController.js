@@ -11,7 +11,10 @@ const getArtistList = asyncHandler(async (req, res) => {
   const page = Number(req.query.pageNumber) || 1;
 
   const filters = JSON.parse(req.query.filters);
-  const sortBy = req.query.sortBy ? req.query.sortBy : "-rating";
+  let sortBy = req.query.sortBy ? req.query.sortBy : "-rating.average";
+  if (sortBy === "-rating") {
+    sortBy = "-rating.average";
+  }
 
   console.log("all-filters", filters);
 
@@ -26,7 +29,7 @@ const getArtistList = asyncHandler(async (req, res) => {
 
   const query = {
     category: { $in: reqCategory },
-    rating: { $gte: reqRating },
+    "rating.average": { $gte: reqRating },
     startPrice: { $gte: reqPriceMin, $lte: reqPriceMax },
     canTravel: { $in: reqCanTravel },
   };
@@ -35,9 +38,13 @@ const getArtistList = asyncHandler(async (req, res) => {
     .skip(pageSize * (page - 1))
     .limit(pageSize)
     .sort(sortBy)
-    .select(" rating numReview name startPrice exp sid");
+    .select(" name rating numReview startPrice exp sid");
 
   const totalProfile = await Artist.countDocuments(query);
+
+  if (sortBy === "-rating.average") {
+    sortBy = "-rating";
+  }
 
   const response_data = {
     totalProfile,
