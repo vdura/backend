@@ -35,12 +35,39 @@ const reviewSchema = mongoose.Schema(
   }
 );
 
+const albumSchema = mongoose.Schema(
+  {
+    name: { type: String, required: true },
+    image: [
+      {
+        url: { type: String, required: true },
+        original_url: { type: String, required: true },
+        alt: { type: String },
+      },
+    ],
+  },
+  {
+    timestamps: true,
+  }
+);
+
 const artistSchema = mongoose.Schema(
   {
     name: {
       type: String,
       required: true,
     },
+    profileImage: { type: String, required: true },
+
+    displayImages: [
+      {
+        url: { type: String, required: true },
+        original_url: { type: String, required: true },
+        alt: { type: String },
+      },
+    ],
+    albums: [albumSchema],
+
     rating: {
       average: {
         type: Number,
