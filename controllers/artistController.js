@@ -38,7 +38,9 @@ const getArtistList = asyncHandler(async (req, res) => {
     .skip(pageSize * (page - 1))
     .limit(pageSize)
     .sort(sortBy)
-    .select(" name rating numReview startPrice exp sid profileImage");
+    .select(
+      " name rating numReview startPrice exp sid profileImage displayImages"
+    );
 
   const totalProfile = await Artist.countDocuments(query);
 
